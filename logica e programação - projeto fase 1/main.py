@@ -45,6 +45,10 @@ while len(udcl_months) > 0:
         except ValueError:
             print("\nPor favor informe somente valores numéricos decimais referentes as temperaturas.\n")
             continue
+        # verificando se a temperatura está entre -60° e 50°
+        if (current_temperature < -60) or (current_temperature > 50):
+            print("\nPor favor informe somente valores coesos para as temperaturas.\n")
+            continue
         # armazenando as informações coletadas na nossa estrutura
         data[current_month] = current_temperature
         # removendo o mês que acabamos de coletar da lista de meses não declarados
